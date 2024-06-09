@@ -1,12 +1,14 @@
 import { Controller, Get } from '@nestjs/common';
 import { ResumeService } from './resume.service';
+import { MessagePattern, Payload } from "@nestjs/microservices";
 
 @Controller()
 export class ResumeController {
   constructor(private readonly resumeService: ResumeService) {}
 
-  @Get()
-  getHello(): string {
-    return this.resumeService.getHello();
+  @MessagePattern('createResume')
+  async createResume(@Payload() payload: unknown) {
+    console.log({ '[createResume]': { payload } });
+
   }
 }
