@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/quote-service-api/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/quote-service-api/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/quote-service-api",
+  "projects": {
+    "gate": {
+      "type": "application",
+      "root": "apps/gate",
+      "entryFile": "main",
+      "sourceRoot": "apps/gate/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gate/tsconfig.app.json"
+      }
+    },
+    "prisma": {
+      "type": "library",
+      "root": "libs/prisma",
+      "entryFile": "index",
+      "sourceRoot": "libs/prisma/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/prisma/tsconfig.lib.json"
+      }
+    },
+    "user": {
+      "type": "application",
+      "root": "apps/user",
+      "entryFile": "main",
+      "sourceRoot": "apps/user/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user/tsconfig.app.json"
+      }
+    },
+    "course": {
+      "type": "application",
+      "root": "apps/course",
+      "entryFile": "main",
+      "sourceRoot": "apps/course/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/course/tsconfig.app.json"
+      }
+    },
+    "vacancy": {
+      "type": "application",
+      "root": "apps/vacancy",
+      "entryFile": "main",
+      "sourceRoot": "apps/vacancy/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/vacancy/tsconfig.app.json"
+      }
+    },
+    "resume": {
+      "type": "application",
+      "root": "apps/resume",
+      "entryFile": "main",
+      "sourceRoot": "apps/resume/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/resume/tsconfig.app.json"
+      }
+    }
+  }
+}
