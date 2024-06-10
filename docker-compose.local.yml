@@ -11,9 +11,9 @@ services:
       - NODE_ENV=development
       - DATABASE_HOST=localhost
       - DATABASE_PORT=5432
-      - DATABASE_USER=postgres
-      - DATABASE_PASSWORD=postgres
-      - DATABASE_NAME=quote_service
+      - DATABASE_USER=johndoe
+      - DATABASE_PASSWORD=randompassword
+      - DATABASE_NAME=mydb
       - NATS_URL=nats://nats:4222
     volumes:
       - .:/app
@@ -26,9 +26,9 @@ services:
       ports:
         - '5432:5432'
       environment:
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: postgres
-        POSTGRES_DB: quote_service
+        POSTGRES_USER: johndoe
+        POSTGRES_PASSWORD: randompassword
+        POSTGRES_DB: mydb
       volumes:
         - postgres_data:/var/lib/postgresql/data
 
